@@ -1,0 +1,47 @@
+div,p,h1,h2,h3,h4,h5,h6{
+    readonly:true;
+}
+
+.highlightMenu {
+    position: absolute;
+    display: none;
+    z-index: 500;
+    -webkit-transition: none;
+    transition: none;
+    top: 0;
+    left: 0;
+}
+
+.highlightMenu--active {
+    display: inline-block;
+    visibility: visible;
+}
+
+.highlightMenu-inner {
+    position: relative;
+    background-image: linear-gradient(to bottom,rgba(49,49,47,.99),#262625);
+    background-repeat: repeat-x;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+/*Style for highlight*/
+.buttonSet {
+    bottom: 5px;
+    opacity: 1;
+    width: 100%;
+}
+
+.button {
+    margin: 1%;
+    height: 30px;
+    float: left;
+    background: white;
+    color: #888888;
+    border-width: 1px;
+    box-shadow: #888888;
+    text-align: center;
+    box-shadow: 1px 2px 4px 4px rgba(0, 0, 0, .5);
+    border-radius: 2px;
+    -webkit-user-select: none !important;
+}

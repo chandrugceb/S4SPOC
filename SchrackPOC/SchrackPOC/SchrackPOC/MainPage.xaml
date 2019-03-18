@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SchrackPOC"
+             xmlns:controls="clr-namespace:SchrackPOC.Controls"
+             x:Class="SchrackPOC.MainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Sync" Text="Pull" Order="Primary" Icon="ic_knowledge.png" Priority="1" Clicked="Pull_clickedAsync"/>
+        <ToolbarItem Name="Search" Text="Push" Order="Primary" Icon="ic_collaboration.png" Priority="1" Clicked="Push_Clicked" />
+    </ContentPage.ToolbarItems>
+        <StackLayout Spacing="0" >
+            <StackLayout>
+                <Entry x:Name="txtIP" IsVisible="false"/>
+                <controls:CustomWebView x:Name="webView" HeightRequest="650"  VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand" BackgroundColor="Blue"/>
+                <!--<Label Text="Add HTML" VerticalOptions="StartAndExpand"/>
+                <Editor x:Name="txtNewParagrah" HeightRequest="50" VerticalOptions="StartAndExpand"/>-->
+            <BoxView BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="FillAndExpand"/>  
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" IsVisible="false">
+                    <Button Text="HTML 1" Clicked="ModifyHTML1_Clicked" HorizontalOptions="CenterAndExpand"/>
+                    <Button Text="HTML 2" Clicked="ModifyHTML2_Clicked" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" IsVisible="false" >
+                    <Button Text="Delete Doc" Clicked="Delete_Clicked" HorizontalOptions="CenterAndExpand"/>
+                    <Button Text="Create Doc1" Clicked="Create1_Clicked" HorizontalOptions="CenterAndExpand"/>
+                    <Button Text="Create Doc2" Clicked="Create2_Clicked" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="false"  >
+                    <Label Text="Sync Status ... "/>
+                    <Label x:Name="txtSyncStatus" FontAttributes="Bold"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" IsVisible="false"  >
+                        <Label Text="Progress... "/>
+                        <Label x:Name="txtProgress" FontAttributes="Bold"/>
+                </StackLayout>
+            <StackLayout Orientation="Horizontal" IsVisible="false" >
+                <Label x:Name="txtError" FontAttributes="Bold"/>
+             </StackLayout>
+             <StackLayout Orientation="Horizontal" IsVisible="false" >
+                    <Label x:Name="txtDoc1"/>
+                    <Label x:Name="txtDoc2"/>
+                    <Label x:Name="txtDoc3"/>
+                    <Label x:Name="txtDoc4"/>
+                </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" IsVisible="false"  >
+                <Button Text="Highlight" Clicked="Highlight_Clicked" IsVisible="false"/>
+                <Button Text="Push Only" Clicked="Push_Clicked" />
+                <Button Text="Pull Only" Clicked="Pull_clickedAsync" />
+                <Button Text="Check all docuement" Clicked="CheckDocuement_Clicked" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" IsVisible="false">
+                <Button Text="Read" Clicked="GetBtn_Clicked"/>
+                <Button Text="Apply" Clicked="RestoreBtn_Clicked"/>
+                <Button Text="Reset" Clicked="ResetBtn_Clicked"/>
+                <Button Text="Search" Clicked="Search_Clicked" IsVisible="false" />
+            </StackLayout>
+                
+        </StackLayout>
+            
+           <BoxView BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+        
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Text="Book Index" TextColor="#00589d" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="5"/>
+                <BoxView Grid.Column="1" BackgroundColor="Gray" WidthRequest="1" VerticalOptions="FillAndExpand"/>
+                <Label Grid.Column="2" Text="Page 56/140" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="5"/>
+            </Grid>
+        </StackLayout>
+    
+</ContentPage>
